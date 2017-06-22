@@ -1,3 +1,40 @@
 <h1>
-  {{title}}
+  Google Numbers
 </h1>
+
+<div>
+  Query:
+  <input type="text" [(ngModel)]="search_txt"/>
+  <br/>
+  Min:
+  <input type="number" [(ngModel)]="x_min"/>
+  <br/>
+  Max:
+  <input type="number" [(ngModel)]="x_max"/>
+  <br/>
+  Step:
+  <input type="number" [(ngModel)]="x_step"/>
+  <br/>
+  <button (click)="search()">Search</button>
+</div>
+
+<div *ngIf="results.length > 0">
+  Query Results:
+<ul>
+  <li *ngFor="let result of results">
+    {{result.txt}} ( {{result.num}} results )
+  </li>
+</ul>
+</div>
+
+<div style="width: 400px; height: 400px;">
+  <canvas baseChart width="400" height="400"
+              [datasets]="lineChartData"
+              [labels]="lineChartLabels"
+              [options]="lineChartOptions"
+              [colors]="lineChartColors"
+              [legend]="lineChartLegend"
+              [chartType]="lineChartType">
+  </canvas>
+</div>
+

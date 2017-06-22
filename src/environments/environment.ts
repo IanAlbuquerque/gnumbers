@@ -4,5 +4,8 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  google_search_api_key: 'AIzaSyA6g1AJe-1DQtikkvdbVwWnHxEKeWJfEGY',
+  google_cse_id: '015091520585611449655:h4qymt4pmiy',
+  google_api: 'https://www.googleapis.com/customsearch/v1'
 };
